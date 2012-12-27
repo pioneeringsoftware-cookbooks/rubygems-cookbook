@@ -27,6 +27,9 @@ src = '/usr/local/src'
 ruby_src = "#{src}/#{ruby}"
 rubygems_src = "#{src}/#{rubygems}"
 
+ruby_bin = "#{node['ruby']['prefix']}/bin/ruby"
+gem_bin = "#{node['ruby']['prefix']}/bin/gem"
+
 # ruby
 
 remote_file "/tmp/#{ruby_tar}" do
@@ -55,7 +58,7 @@ end
 bash 'install ruby' do
   cwd ruby_src
   code 'make install'
-  not_if { File.exist?("#{node['ruby']['prefix']}/bin/ruby") }
+  not_if { File.exist?(ruby_bin) }
 end
 
 # rubygems
@@ -74,9 +77,19 @@ end
 bash 'set up rubygems' do
   cwd rubygems_src
   code "#{node['ruby']['prefix']}/bin/ruby setup.rb"
-  creates "#{node['ruby']['prefix']}/bin/gem"
+  creates gem_bin
 end
 
-gem_package "bundler" do
-  gem_binary "#{node['ruby']['prefix']}/bin/gem"
+# gems
+
+ruby_block 'set up default gem binary' do
+  block do
+    run_context.resource_collection.select do |resource|
+      resource.resource_name == :gem_package
+    end.each do |resource|
+      resource.gem_binary gem_bin unless resource.gem_binary
+    end
+  end
 end
+
+gem_package 'bundler'
