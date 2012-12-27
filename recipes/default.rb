@@ -76,3 +76,7 @@ bash 'set up rubygems' do
   code "#{node['ruby']['prefix']}/bin/ruby setup.rb"
   creates "#{node['ruby']['prefix']}/bin/gem"
 end
+
+gem_package "bundler" do
+  gem_binary "#{node['ruby']['prefix']}/bin/gem"
+end
