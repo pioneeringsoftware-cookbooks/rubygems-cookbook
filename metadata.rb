@@ -7,6 +7,6 @@ version          "0.1.0"
 
 depends 'build-essential'
 
-%w( debian ubuntu ).each do |os|
+%w(debian ubuntu).each do |os|
   supports os
 end

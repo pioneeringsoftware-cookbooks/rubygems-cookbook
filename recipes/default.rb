@@ -11,9 +11,9 @@ include_recipe 'build-essential'
 
 case node['platform']
   when 'debian', 'ubuntu'
-    package 'libssl-dev'
-    package 'zlib1g-dev'
-    package 'libreadline6-dev'
+    %w(libssl-dev zlib1g-dev libreadline6-dev libyaml-dev).each do |pkg|
+      package pkg
+    end
 end
 
 ruby = "ruby-#{node['ruby']['version']}"
