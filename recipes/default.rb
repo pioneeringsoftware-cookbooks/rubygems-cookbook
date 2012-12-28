@@ -11,7 +11,7 @@ include_recipe 'build-essential'
 
 case node['platform']
   when 'debian', 'ubuntu'
-    %w(libssl-dev zlib1g-dev libreadline6-dev libyaml-dev).each do |pkg|
+    %w(libssl-dev zlib1g-dev libreadline6-dev libyaml-dev libffi-dev).each do |pkg|
       package pkg
     end
 end
