@@ -45,7 +45,7 @@ end
 
 bash 'configure ruby' do
   cwd ruby_src
-  code "./configure --prefix=#{node['ruby']['prefix']}"
+  code "./configure --prefix=#{node['ruby']['prefix']} --disable-install-doc"
   creates "#{ruby_src}/config.status"
 end
 
