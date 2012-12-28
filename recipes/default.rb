@@ -38,7 +38,7 @@ remote_file "/tmp/#{ruby_tar}" do
   mode 0644
 end
 
-execute "tar -xzf /tmp/#{ruby_tar}" do
+execute "tar --no-same-owner -xzf /tmp/#{ruby_tar}" do
   cwd src
   creates ruby_src
 end
@@ -69,7 +69,7 @@ remote_file "/tmp/#{rubygems_tar}" do
   mode 0644
 end
 
-execute "tar -xzf /tmp/#{rubygems_tar}" do
+execute "tar --no-same-owner -xzf /tmp/#{rubygems_tar}" do
   cwd src
   creates rubygems_src
 end
