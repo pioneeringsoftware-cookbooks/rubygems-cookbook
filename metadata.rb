@@ -1,9 +1,9 @@
-maintainer       "YOUR_COMPANY_NAME"
-maintainer_email "YOUR_EMAIL"
+maintainer       "Pioneering Software, United Kingdom"
+maintainer_email "roy@pioneeringsoftware.co.uk"
 license          "All rights reserved"
-description      "Installs/Configures rubygems"
+description      "Installs/Configures Ruby and RubyGems"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.1.0"
+version          "0.1.1"
 
 depends 'build-essential'
 

@@ -1,12 +1,11 @@
-# CHANGELOG for rubygems
+# CHANGELOG for rubygems cookbook
 
-This file is used to list changes made in each version of rubygems.
+This file lists changes made to each version of the `rubygems` cookbook.
 
-## 0.1.0:
+## 0.1.1
 
-* Initial release of rubygems
+* Added some meaningful documentation
 
-- - - 
-Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
+## 0.1.0
 
-The [Github Flavored Markdown page](http://github.github.com/github-flavored-markdown/) describes the differences between markdown on github and standard markdown.
+* Initial release of `rubygems` cookbook

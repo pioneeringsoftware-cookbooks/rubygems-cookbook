@@ -1,7 +1,14 @@
-default['ruby']['version'] = '1.9.3-p362'
-default['ruby']['checksum'] = 'eb593607862b16a28176ae6d086dbe3bd9bd41935ec999a8cd5ef8773e8239d6'
+# You can update the tarball checksums on OS X using shasum -a 256 followed by
+# the path of the tarballs. Or, alternatively, use Curl as follows.
+#
+#   curl http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p385.tar.gz | shasum -a 256
+#   curl http://http://production.cf.rubygems.org/rubygems/rubygems-1.8.25.tgz | shasum -a 256
+#
+
+default['ruby']['version'] = '1.9.3-p385'
+default['ruby']['checksum'] = '4b15df007f5935ec9696d427d8d6265b121d944d237a2342d5beeeba9b8309d0'
 default['ruby']['prefix'] = '/usr'
 default['ruby']['make_opts'] = '-j10'
 
-default['rubygems']['version'] = '1.8.24'
-default['rubygems']['checksum'] = '4b61fa51869b3027bcfe67184b42d2e8c23fa6ab17d47c5c438484b9be2821dd'
+default['rubygems']['version'] = '1.8.25'
+default['rubygems']['checksum'] = '649348ddf8746887fb1ee79c55dc508f0627d3d0bfa7fcdbcd4edb24908f1cc8'
