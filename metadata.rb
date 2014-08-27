@@ -1,3 +1,4 @@
+name             "rubygems"
 maintainer       "Pioneering Software, United Kingdom"
 maintainer_email "roy@pioneeringsoftware.co.uk"
 license          "All rights reserved"
